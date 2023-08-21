@@ -1,14 +1,11 @@
 import React from "react";
+import Part from "./Part";
 
 export default function Content({ courseContent }) {
   return (
     <div>
       {courseContent.map((ele) => {
-        return (
-          <p>
-            {ele.name} {ele.exercises}
-          </p>
-        );
+        return <Part ele={ele} key={ele.name} />;
       })}
     </div>
   );

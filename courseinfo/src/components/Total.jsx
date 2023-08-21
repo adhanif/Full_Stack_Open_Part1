@@ -3,7 +3,7 @@ const total = 0;
 export default function Total({ courseContent }) {
   return (
     <div>
-      Number of exercises{" "}
+      Total Number of exercises{" "}
       {courseContent.reduce((acc, curr) => {
         return (acc += curr.exercises);
       }, 0)}
