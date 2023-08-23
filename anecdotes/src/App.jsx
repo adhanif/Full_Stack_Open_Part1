@@ -15,6 +15,7 @@ function App() {
 
   const [selected, setSelected] = useState(0);
   const [votes, setVotes] = useState({});
+
   let min = 0;
   let max = anecdotes.length - 1;
   const handleClick = () => {
@@ -29,12 +30,33 @@ function App() {
     setVotes(updatedVotes);
   };
 
+  let maxVotes = 0;
+  let maxKey = 0;
+  for (let key in votes) {
+    if (votes[key]) {
+      if (votes[key] > maxVotes) {
+        maxKey = key;
+        maxVotes = votes[key];
+      }
+    }
+  }
+
   return (
     <>
-      <p>{anecdotes[selected]}</p>
-      <p>has {votes[selected] ? votes[selected] : 0} votes</p>
-      <button onClick={handleVote}>vote</button>
-      <button onClick={handleClick}>next anecdote </button>
+      <div>
+        <h1>Anecdote of the day</h1>
+        <p>{anecdotes[selected]}</p>
+        <p>has {votes[selected] ? votes[selected] : 0} votes</p>
+        <button onClick={handleVote}>vote</button>
+        <button onClick={handleClick}>next anecdote </button>
+      </div>
+      <div>
+        <h1>Anecdote with the most votes</h1>
+        <p>
+          {anecdotes[maxKey]} <br />
+          has {maxVotes} votes
+        </p>
+      </div>
     </>
   );
 }
