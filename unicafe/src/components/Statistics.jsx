@@ -4,13 +4,22 @@ export default function Statistics({ good, neutral, bad }) {
   let total = good + neutral + bad;
   return (
     <div>
-      <h1>Statistics</h1>
-      <p>good {good}</p>
-      <p>neutral {neutral}</p>
-      <p>bad {bad}</p>
-      <p>all {good + neutral + bad}</p>
-      <p>average {total && (good - bad) / total}</p>
-      <p>positive {total && (good / total) * 100} %</p>
+      {total ? (
+        <>
+          <h1>Statistics</h1>
+          <p>good {good}</p>
+          <p>neutral {neutral}</p>
+          <p>bad {bad}</p>
+          <p>all {total}</p>
+          <p>average {(good - bad) / total}</p>
+          <p>positive {(good / total) * 100} %</p>
+        </>
+      ) : (
+        <>
+          <h1>Statistics</h1>
+          <p>No feedback given</p>
+        </>
+      )}
     </div>
   );
 }
