@@ -16,12 +16,6 @@ export default function Statistics({ good, neutral, bad }) {
           <StatisticLine text="all" value={total} />
           <StatisticLine text="average" value={average} />
           <StatisticLine text="positive" value={`${positive} %`} />
-          {/* <p>good {good}</p>
-          <p>neutral {neutral}</p>
-          <p>bad {bad}</p>
-          <p>all {total}</p>
-          <p>average {}</p>
-          <p>positive {} %</p> */}
         </>
       ) : (
         <>
