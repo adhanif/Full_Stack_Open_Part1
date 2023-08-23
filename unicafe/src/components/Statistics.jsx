@@ -10,7 +10,7 @@ export default function Statistics({ good, neutral, bad }) {
       <p>bad {bad}</p>
       <p>all {good + neutral + bad}</p>
       <p>average {total && (good - bad) / total}</p>
-      <p>positive {(good / total) * 100} %</p>
+      <p>positive {total && (good / total) * 100} %</p>
     </div>
   );
 }
