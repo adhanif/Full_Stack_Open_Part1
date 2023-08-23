@@ -14,15 +14,26 @@ function App() {
   ];
 
   const [selected, setSelected] = useState(0);
+  const [votes, setVotes] = useState({});
   let min = 0;
   let max = anecdotes.length - 1;
   const handleClick = () => {
     setSelected(Math.floor(Math.random() * (max - min + 1) + min));
   };
 
+  const handleVote = () => {
+    const updatedVotes = { ...votes };
+    !updatedVotes[selected]
+      ? (updatedVotes[selected] = 1)
+      : updatedVotes[selected]++;
+    setVotes(updatedVotes);
+  };
+
   return (
     <>
       <p>{anecdotes[selected]}</p>
+      <p>has {votes[selected] ? votes[selected] : 0} votes</p>
+      <button onClick={handleVote}>vote</button>
       <button onClick={handleClick}>next anecdote </button>
     </>
   );
