@@ -13,16 +13,16 @@ function App() {
     "The only way to go fast, is to go well.",
   ];
 
-  const [selected, setSelected] = useState();
+  const [selected, setSelected] = useState(0);
   let min = 0;
   let max = anecdotes.length - 1;
   const handleClick = () => {
-    setSelected(anecdotes[Math.floor(Math.random() * (max - min + 1) + min)]);
+    setSelected(Math.floor(Math.random() * (max - min + 1) + min));
   };
 
   return (
     <>
-      <p>{selected}</p>
+      <p>{anecdotes[selected]}</p>
       <button onClick={handleClick}>next anecdote </button>
     </>
   );
