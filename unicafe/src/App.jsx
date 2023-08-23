@@ -11,9 +11,14 @@ function App() {
   return (
     <>
       <h1>Give Feedback</h1>
-      <Button handleEvent={() => setGood(good + 1)} feedback="good" />
-      <Button handleEvent={() => setNeutral(neutral + 1)} feedback="neutral" />
-      <Button handleEvent={() => setBad(bad + 1)} feedback="bad" />
+      <div style={{ display: "flex" }}>
+        <Button handleEvent={() => setGood(good + 1)} feedback="good" />
+        <Button
+          handleEvent={() => setNeutral(neutral + 1)}
+          feedback="neutral"
+        />
+        <Button handleEvent={() => setBad(bad + 1)} feedback="bad" />
+      </div>
       <Statistics good={good} neutral={neutral} bad={bad} />
     </>
   );
