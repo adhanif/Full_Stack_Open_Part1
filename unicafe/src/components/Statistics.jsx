@@ -4,7 +4,7 @@ import StatisticLine from "./StatisticLine";
 export default function Statistics({ good, neutral, bad }) {
   let total = good + neutral + bad;
   let average = (good - bad) / total;
-  let positive = (good / total) * 100;
+  let positive = ((good / total) * 100).toFixed(1);
   return (
     <div>
       {total ? (
