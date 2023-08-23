@@ -14,7 +14,6 @@ function App() {
       <Button handleEvent={() => setGood(good + 1)} feedback="good" />
       <Button handleEvent={() => setNeutral(neutral + 1)} feedback="neutral" />
       <Button handleEvent={() => setBad(bad + 1)} feedback="bad" />
-
       <Statistics good={good} neutral={neutral} bad={bad} />
     </>
   );
